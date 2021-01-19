@@ -1,8 +1,15 @@
+import React from 'react'
 
-function HowItWorks() {
+
+const HowItWorks = (props) => {
+
+
     return (
-      <div>
-        How It Works 
+      <div className = "Footer">
+        <p>How It Works </p>
+        <div>
+
+        </div>
       </div>
     );
   }

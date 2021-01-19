@@ -1,7 +1,20 @@
-.App {
-  text-align: center;
+.Header {
+  background-color: rgb(34, 34, 34);
 }
 
+.Footer {
+  background-color: rgb(242, 241, 239);
+}
+
+.Button {
+  background-color: rgb(120, 224, 195);
+
+}
+
+.Logo {
+   : rgb(120, 224, 195);
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

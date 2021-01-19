@@ -1,7 +1,7 @@
 
 function GetStarted() {
   return (
-    <div>
+    <div className ="Button">
        GET STARTED 
     </div>
   );
