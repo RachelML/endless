@@ -21,7 +21,7 @@ class App extends Component {
   const response = await Axios.get(`https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge`)
   const howItWorks = response.data
   this.setState({ worksData: howItWorks })
-  console.log(howItWorks)
+  // console.log(howItWorks)
     }catch(e){
       console.log(e)
     }
@@ -32,7 +32,11 @@ componentDidMount() {
 }
 
 
+
 render(){
+
+
+  
 
   return (
     <div>
@@ -50,9 +54,14 @@ render(){
             every month.
           </p>
           <GetStarted />
+
       </div>
+      <HowItWorks 
+      works={this.state.worksData}
+      
+      />
+
     </div>
-    <HowItWorks works={this.state.worksData}/>
 
     </div>
   );
