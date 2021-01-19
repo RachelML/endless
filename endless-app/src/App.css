@@ -1,20 +1,48 @@
 .Header {
   background-color: rgb(34, 34, 34);
+  padding: 0.5em;
 }
 
 .Footer {
   background-color: rgb(242, 241, 239);
+  position: fixed;
 }
 
 .Button {
   background-color: rgb(120, 224, 195);
+  width: 8em;
+  text-align: center;
+  border-radius: 20px;
+  padding: 10px 20px;
 
+
+}
+
+.Background {
+  max-width: 100%;
+    height: auto;
+    width: auto\9;
+    position: absolute;
 }
 
 .Logo {
-   : rgb(120, 224, 195);
-
+  width: 8em; 
+  padding-left: 10% ;
 }
+
+.Works-title{
+  text-align: center;
+  position: fixed;
+}
+
+.Text-container {
+  position: absolute;
+  color: white;
+  width: 40%;
+  padding-left: 10%;
+  margin-top: 20%;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

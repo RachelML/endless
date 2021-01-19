@@ -6,7 +6,7 @@ const HowItWorks = (props) => {
 
     return (
       <div className = "Footer">
-        <p>How It Works </p>
+        <p className ="Works-title">How It Works </p>
         <div>
 
         </div>

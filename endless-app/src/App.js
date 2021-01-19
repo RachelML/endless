@@ -5,7 +5,7 @@ import GetStarted from './components/GetStarted';
 import HowItWorks from './components/HowItWorks';
 import Nav from './components/Nav'
 import Axios from 'axios'
-
+import Image from './images/photo-couch_2x.jpg'
 
 
 class App extends Component {
@@ -35,19 +35,25 @@ componentDidMount() {
 render(){
 
   return (
-    
     <div>
       <Nav />
-        <h2>New Games & Accessories</h2>
-        <h1>Monthly packages.</h1>
-        <h1>Excitement delivered daily.</h1>
-        <p>
-          What's the best way to shop for the latest video games and peripherals?
-           How about never shopping at all? You'll get new stuff on your doorstep -
-           every month.
-        </p>
-        <GetStarted />
-        <HowItWorks works={this.state.worksData}/>
+    <div>
+      <img src={Image} alt="background" className="Background" />
+      
+      <div className="Text-container">
+          <h2>New Games & Accessories</h2>
+          <h1>Monthly packages.</h1>
+          <h1>Excitement delivered daily.</h1>
+          <p>
+            What's the best way to shop for the latest video games and peripherals?
+            How about never shopping at all? You'll get new stuff on your doorstep -
+            every month.
+          </p>
+          <GetStarted />
+      </div>
+    </div>
+    <HowItWorks works={this.state.worksData}/>
+
     </div>
   );
 }
