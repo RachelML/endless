@@ -2,10 +2,10 @@
   font-family: 'Lato', sans-serif;
     }
 
-
 .Header {
   background-color: rgb(34, 34, 34);
   padding: 0.5em;
+  width: 100%;
 }
 
 
@@ -13,10 +13,8 @@
   position:fixed;
   width: 100%;
   text-align: center;
-  bottom: 0;
   background-color: rgb(242, 241, 239);
-  overflow-y:scroll;
-
+  bottom: 130px;
 }
 
 .Button {
@@ -36,8 +34,8 @@
 
 .Background {
   width: 100%;
-    position: absolute;
-    z-index: -1;
+  position: absolute;
+  z-index: -1;
     
 }
 
@@ -54,20 +52,16 @@
 .Text-container {
   position: absolute;
   color: white;
-  width: 40%;
+  width: 500px;
   padding-left: 10%;
-  margin-top: 20%;
+  margin-top: 40px;
 }
 
 .Data-container {
-  height: 500px;
  display: flex;
-  margin:0 100px;
-
-
-
-/* background-color: rgb(242, 241, 239); 
-  position: fixed; */
+  width: 100%;  
+  background-color: rgb(242, 241, 239); 
+  position: fixed;
 
 }
 
@@ -75,10 +69,14 @@
   text-decoration: underline;
   text-decoration-color: rgb(120, 224, 195);
   font-size: 2em;
+  text-align: center;
+
 }
 
 .Delivery-info {
   text-decoration: none;
+  text-align: center;
+
 
 }
 
@@ -106,40 +104,32 @@ h2 {
   font-weight: 300;
 }
 
-
-
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .Background {
+    height: 100%;
+    width: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .Data-container {
+     width: 100%;  
+     background-color: rgb(242, 241, 239); 
+     display: block
+   }
+
+   .Text-container {
+    position: absolute;
+    color: white;
+    width: 80%;
+    padding-left: 10%;
+    margin-top: 10%;
   }
-} */
+
+  
+
+}
+
+
