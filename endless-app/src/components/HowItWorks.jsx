@@ -8,8 +8,6 @@ const HowItWorks = (props) => {
   const [data, setData] = useState([]);
   const [dataSort, setDataSorted] = useState([]);
 
-  const [sortType, setSortType] = useState('stepNumber');
-
 
   useEffect(() => {
 
@@ -18,29 +16,32 @@ const HowItWorks = (props) => {
         'https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge',
       );
  
-console.log(result.data)
       setData(result.data);
+
+      
+      const sorted =  [...result.data].sort((a, b) => a['stepNumber'] - b['stepNumber'])
+            setDataSorted(sorted);
+
+
+      
     };
+
 
     fetchData();
-    
 
-    const sortArray = type => {
-      const types = {
-        stepNumber: 'stepNumber',
-        versionContent: 'versionContent',
-      };
-      //sorting props in order
-      const sortProperty = types[type];
-      const sorted = [...data].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      setDataSorted(sorted);
-      console.log(data)
-    
-    };
-    
 
-    sortArray();
-  },[]);
+    // const sortArray =  () => {
+      
+    //   //sorting props in order
+    //   const sorted =  [...data].sort((a, b) => a['stepNumber'] - b['stepNumber'])
+
+    //   setDataSorted(sorted);
+    //   console.log(sorted) 
+
+
+    // };
+    // sortArray();
+  }, []);
   
 
   return (
@@ -50,7 +51,7 @@ console.log(result.data)
         <div className="Data-container">
 
   {/* mapping through stepNumber  */}
-            {data.map(({ versionContent, stepNumber }) => {
+            {dataSort.map(({ versionContent, stepNumber }) => {
 
 
 
