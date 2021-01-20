@@ -9,7 +9,6 @@ const HowItWorks = (props) => {
   const [dataSort, setDataSorted] = useState([]);
 
   const [sortType, setSortType] = useState('stepNumber');
-console.log(props.howData)
 
 
   useEffect(() => {
@@ -24,7 +23,7 @@ console.log(result.data)
     };
 
     fetchData();
-
+    
 
     const sortArray = type => {
       const types = {
@@ -35,14 +34,14 @@ console.log(result.data)
       const sortProperty = types[type];
       const sorted = [...data].sort((a, b) => a[sortProperty] - b[sortProperty]);
       setDataSorted(sorted);
-      console.log(sorted)
-      
-
+      console.log(data)
+    
     };
-    sortArray(sortType);
-  }, [sortType]);
+    
+
+    sortArray();
+  },[]);
   
-  console.log(props)
 
   return (
     <div className="Works-footer">
@@ -51,7 +50,7 @@ console.log(result.data)
         <div className="Data-container">
 
   {/* mapping through stepNumber  */}
-            {dataSort.map(({ versionContent, stepNumber }) => {
+            {data.map(({ versionContent, stepNumber }) => {
 
 
 
