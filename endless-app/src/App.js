@@ -11,19 +11,19 @@ function App() {
   const [data, setData] = useState();
  
   // api call to retrive data 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = await Axios(
-        'https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge',
-      );
+
+//   useEffect(() => {
+//     const fetchData = async () => {
+//       const result = await Axios(
+//         'https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge',
+//       );
  
+// console.log(result.data)
+//       setData(result.data);
+//     };
 
-      setData(result.data);
-    };
-    console.log(data)
-
-    fetchData();
-  }, []);
+//     fetchData();
+//   }, []);
  
 
     return (
@@ -48,7 +48,7 @@ function App() {
         </div>
           {/* passing api data to HowItWorks Component */}
         <HowItWorks 
-           howData={data}
+          //  howData={data}
         />
 
       </div>

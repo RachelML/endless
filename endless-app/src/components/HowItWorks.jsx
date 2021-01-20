@@ -1,12 +1,29 @@
 import React, { useState, useEffect } from 'react';
+import Axios from 'axios'
+
 
 
 
 const HowItWorks = (props) => {
   const [data, setData] = useState([]);
   const [sortType, setSortType] = useState('stepNumber');
+console.log(props.howData)
+
 
   useEffect(() => {
+
+    const fetchData = async () => {
+      const result = await Axios(
+        'https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge',
+      );
+ 
+console.log(result.data)
+      setData(result.data);
+    };
+
+    fetchData();
+
+
     const sortArray = type => {
       const types = {
         stepNumber: 'stepNumber',
@@ -14,7 +31,7 @@ const HowItWorks = (props) => {
       };
       //sorting props in order
       const sortProperty = types[type];
-      const sorted = [...props.howData].sort((a, b) => a[sortProperty] - b[sortProperty]);
+      const sorted = [...data].sort((a, b) => a[sortProperty] - b[sortProperty]);
       setData(sorted);
       console.log(sorted)
       
