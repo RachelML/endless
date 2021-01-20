@@ -12,39 +12,52 @@ const HowItWorks = (props) => {
         stepNumber: 'stepNumber',
         versionContent: 'versionContent',
       };
+      //sorting props in order
       const sortProperty = types[type];
       const sorted = [...props.howData].sort((a, b) => a[sortProperty] - b[sortProperty]);
       setData(sorted);
-      console.log(setData)
+      console.log(sorted)
+      
+
     };
     sortArray(sortType);
   }, [sortType]);
+  
+  console.log(props)
 
   return (
-    <div className="Data-container">
+    <div className="Works-footer">
+        <p className="Works-title">How It Works </p>
+
+        <div className="Data-container">
+
+  {/* mapping through stepNumber  */}
+            {data.map(({ versionContent, stepNumber }) => {
 
 
-      { data.map(({ versionContent, stepNumber }) => {
-        console.log({ stepNumber })
-        return <div >
-          <div className="Works-number">
-            0{stepNumber}
-          </div>
 
-          {versionContent.map(({ title, body }) => {
+                return <div >
+                    <div className="Works-number">
+                      
+                        0{stepNumber}
+                    </div>
+  {/* mapping through title, body   */}
 
-            return <div className="Delivery-info">
-              <h3> {title}</h3>
-              <p className="Detail-text">{body}</p>
+                    {versionContent.map(({ title, body }) => {
+                        return <div className="Delivery-info">
+                            <h3> {title}</h3>
+                            <p className="Detail-text">{body}</p>
+                        </div>
+                    }
 
-            </div>
-          }
-          )}
+                    )}
+
+                </div>
+            }
+
+            )}
         </div>
-      }
-      )}
     </div>
-  );
+);
 }
-
 export default HowItWorks;

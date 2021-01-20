@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import GetStarted from './components/GetStarted';
 import HowItWorks from './components/HowItWorks';
 import Nav from './components/Nav'
 import Axios from 'axios'
 import Image from './images/photo-couch_2x.jpg'
-import Test from './components/test'
 
 
-class App extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      worksData: []
-    }
-  }
+function App() {
+  const [data, setData] = useState();
+ 
+  // api call to retrive data 
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await Axios(
+        'https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge',
+      );
+ 
 
-  fetchWorksData = async () => {
-    try {
-      const response = await Axios.get(`https://uqnzta2geb.execute-api.us-east-1.amazonaws.com/default/FrontEndCodeChallenge`)
-      const howItWorks = response.data
-      this.setState({ worksData: howItWorks })
-    } catch (e) {
-      console.log(e)
-    }
-  }
+      setData(result.data);
+    };
+    console.log(data)
 
-  componentDidMount() {
-    this.fetchWorksData()
-  }
-
-  render() {
+    fetchData();
+  }, []);
+ 
 
     return (
       <div className="Main-container">
@@ -47,18 +41,19 @@ class App extends Component {
               How about never shopping at all? You'll get new stuff on your doorstep -
               every month.
           </p>
+
             <GetStarted />
-
-          </div>
+            </div>
+          
         </div>
-
-        <Test howData={this.state.worksData}
+          {/* passing api data to HowItWorks Component */}
+        <HowItWorks 
+           howData={data}
         />
-        {/* <HowItWorks 
-      howData={this.state.worksData}/> */}
 
       </div>
-    );
-  }
-}
-export default App;
+    )
+  
+      }
+
+      export default App;
