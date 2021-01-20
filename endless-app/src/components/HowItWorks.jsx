@@ -6,6 +6,8 @@ import Axios from 'axios'
 
 const HowItWorks = (props) => {
   const [data, setData] = useState([]);
+  const [dataSort, setDataSorted] = useState([]);
+
   const [sortType, setSortType] = useState('stepNumber');
 console.log(props.howData)
 
@@ -32,7 +34,7 @@ console.log(result.data)
       //sorting props in order
       const sortProperty = types[type];
       const sorted = [...data].sort((a, b) => a[sortProperty] - b[sortProperty]);
-      setData(sorted);
+      setDataSorted(sorted);
       console.log(sorted)
       
 
@@ -49,7 +51,7 @@ console.log(result.data)
         <div className="Data-container">
 
   {/* mapping through stepNumber  */}
-            {data.map(({ versionContent, stepNumber }) => {
+            {dataSort.map(({ versionContent, stepNumber }) => {
 
 
 
