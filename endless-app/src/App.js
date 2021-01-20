@@ -6,6 +6,7 @@ import HowItWorks from './components/HowItWorks';
 import Nav from './components/Nav'
 import Axios from 'axios'
 import Image from './images/photo-couch_2x.jpg'
+import Test from './components/test'
 
 
 class App extends Component {
@@ -39,10 +40,10 @@ render(){
   
 
   return (
-    <div>
+    <div className = "Main-container">
       <Nav />
     <div>
-      <img src={Image} alt="background" className="Background" />
+      {/* <img src={Image} alt="background" className="Background" /> */}
       
       <div className="Text-container">
           <h2>New Games & Accessories</h2>
@@ -56,12 +57,16 @@ render(){
           <GetStarted />
 
       </div>
-      <HowItWorks 
-      works={this.state.worksData}
-      
-      />
+     
 
     </div>
+
+    <Test />
+
+    {/* <HowItWorks 
+      works={this.state.worksData}
+      
+      /> */}
 
     </div>
   );

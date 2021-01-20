@@ -6,16 +6,6 @@ const HowItWorks = (props) => {
   // console.log(props)
  console.log(props)
 
- props.works.map( ( {stepNumber} ) => {
-  console.log(( {stepNumber} ))
- return <div className = "Works-number"> 
- {stepNumber} 
- 
- </div>
-} 
-
-)
-
 
     return (
       
@@ -24,11 +14,17 @@ const HowItWorks = (props) => {
 
         <div className = "Data-container">
             { props.works.map( ( {versionContent, stepNumber} ) => {
-  return <div className = "Works-number"> 0{stepNumber} 
+              console.log({stepNumber})
+  return <div > 
+      <div className = "Works-number">
+          0{stepNumber} 
+          </div>
+
               {versionContent.map(({title,body})=> {
-                return <div>
+                
+                return <div className ="Delivery-info">
                   <h3> {title}</h3>
-                  <p>{body}</p>
+                  <p className ="Detail-text">{body}</p>
           
                   </div>
 

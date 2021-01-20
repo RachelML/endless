@@ -1,15 +1,22 @@
-/* .Header {
+*{
+  font-family: 'Lato', sans-serif;
+    }
+
+
+.Header {
   background-color: rgb(34, 34, 34);
   padding: 0.5em;
 }
 
+
 .Works-footer {
-  position: fixed;
+  position:fixed;
   width: 100%;
   text-align: center;
-  margin-top: 600px;
-  height: 300px;
+  bottom: 0;
   background-color: rgb(242, 241, 239);
+  overflow-y:scroll;
+
 }
 
 .Button {
@@ -18,19 +25,26 @@
   text-align: center;
   border-radius: 20px;
   padding: 10px 20px;
+  color: black;
+  transition: background-color 2s ease-out;
+}
 
+.Button:hover{
+  background-color: blue;
+  cursor: pointer;
 }
 
 .Background {
-  max-width: 100%;
-    height: auto;
-    width: auto\9;
+  width: 100%;
     position: absolute;
+    z-index: -1;
+    
 }
 
 .Logo {
   width: 8em; 
   padding-left: 10% ;
+ 
 }
 
 .Works-title{
@@ -46,13 +60,53 @@
 }
 
 .Data-container {
-  background-color: tomato;
+  height: 500px;
+ display: flex;
+  margin:0 100px;
+
+
+
+/* background-color: rgb(242, 241, 239); 
+  position: fixed; */
+
 }
 
 .Works-number {
-  color: tomato;
+  text-decoration: underline;
+  text-decoration-color: rgb(120, 224, 195);
+  font-size: 2em;
+}
 
-} */
+.Delivery-info {
+  text-decoration: none;
+
+}
+
+h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.60em;
+}
+
+.Detail-text{
+  font-size: 0.60em;
+  padding:0 25px;
+  font-weight: 300;
+  margin-bottom: 100px;
+
+}
+
+h1{
+  font-weight: 300;
+  font-size: 40px;
+  padding-top: 0px;
+}
+
+h2 {
+  font-weight: 300;
+}
+
+
 
 
 /* .App-logo {
