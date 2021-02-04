@@ -29,18 +29,6 @@ const HowItWorks = (props) => {
 
     fetchData();
 
-
-    // const sortArray =  () => {
-      
-    //   //sorting props in order
-    //   const sorted =  [...data].sort((a, b) => a['stepNumber'] - b['stepNumber'])
-
-    //   setDataSorted(sorted);
-    //   console.log(sorted) 
-
-
-    // };
-    // sortArray();
   }, []);
   
 
@@ -53,7 +41,7 @@ const HowItWorks = (props) => {
   {/* mapping through stepNumber  */}
             {dataSort.map(({ versionContent, stepNumber }) => {
 
-
+   
 
                 return <div >
                     <div className="Works-number">
